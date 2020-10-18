@@ -12,29 +12,28 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.*;
 
 //Läser godtyckligt antal bilder från en katalog
 public class BildvisareC extends JFrame implements ActionListener {
     JButton changeImageButton;
     JLabel imageViewer;
+    JPanel panel = new JPanel();
     final String imagePath = "src\\övningsuppgift1\\images\\";
     Path imageFolder = Paths.get(imagePath);
     int imageIndex = 0;
     int imageCount= 0;
     List <String> imageFileNames = new ArrayList<>();
-    
+
+    //Creates a list of all files in a given directory
     protected List <String> loadImageNames(Path imageDir){
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(imageDir)) {
             for (Path file: stream) {
-                imageFileNames.add(file.getFileName().toString());
+                imageFileNames.add(file.toString());
                 System.out.println(file.getFileName().toString());
             }
         } catch (IOException | DirectoryIteratorException x) {
-            System.err.println(x);
+            x.printStackTrace();
         }
         return imageFileNames;
     }
@@ -43,12 +42,12 @@ public class BildvisareC extends JFrame implements ActionListener {
         imageFileNames = loadImageNames(imageFolder);
         imageCount = imageFileNames.size();
         changeImageButton = new JButton("Byt bild");
-        imageViewer = new JLabel(new ImageIcon(imagePath 
-                + imageFileNames.get(imageIndex)));
-        setLayout(new FlowLayout());
-        getContentPane().setBackground(Color.BLACK);
-        add(imageViewer);
-        add(changeImageButton);
+        imageViewer = new JLabel(new ImageIcon(imageFileNames.get(imageIndex)));
+        panel.setLayout(new FlowLayout());
+        panel.setBackground(Color.BLACK);
+        panel.add(imageViewer);
+        panel.add(changeImageButton);
+        this.add(panel);
         changeImageButton.addActionListener(this);
         setSize(800,600);   
         setVisible(true); 
@@ -62,7 +61,6 @@ public class BildvisareC extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         imageIndex = (imageIndex + 1) % imageCount;
-        imageViewer.setIcon(new ImageIcon(
-                imagePath + imageFileNames.get(imageIndex)));
+        imageViewer.setIcon(new ImageIcon( imageFileNames.get(imageIndex)));
     }
 }

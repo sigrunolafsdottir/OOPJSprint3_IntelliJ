@@ -4,17 +4,16 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.*;
+
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
-import javax.swing.JLabel;
 
 //Togglar mellan två bilder
 public class BildvisareB extends JFrame implements ActionListener {
     
     JButton changeImageButton;
     JLabel imageViewer;
+    JPanel panel;
     final String imagePath0 = "src\\övningsuppgift1\\images\\bild0.jpg";
     final String imagePath3 = "src\\övningsuppgift1\\images\\bild3.jpg";
     int toggler = 0;
@@ -22,10 +21,12 @@ public class BildvisareB extends JFrame implements ActionListener {
     public BildvisareB() {
         changeImageButton = new JButton("Byt bild");
         imageViewer = new JLabel(new ImageIcon(imagePath3));
-        setLayout(new FlowLayout());
-        getContentPane().setBackground(Color.BLACK);
-        add(imageViewer);
-        add(changeImageButton);
+        panel = new JPanel();
+        panel.setLayout(new FlowLayout());
+        panel.setBackground(Color.BLACK);
+        panel.add(imageViewer);
+        panel.add(changeImageButton);
+        this.add(panel);
         changeImageButton.addActionListener(this);
         setSize(800,600);   
         setVisible(true); 

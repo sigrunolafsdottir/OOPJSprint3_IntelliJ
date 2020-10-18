@@ -3,14 +3,16 @@ package GUIDemo;
 import javax.swing.JFrame;
 
 
-public class JFrameDemo  {
+public class JFrameDemo {
     
     JFrameDemo(){
+        //alternativt kan man låta denna klass extenda JFrameDemo
+        //Då behövs inget JFrame-objekt och istf. "jf." används "this."
         JFrame jf = new JFrame();
         jf.setTitle("En titel");
-        jf.setSize(5000, 5000);
-        jf.setLocation(100, 50);
-       //this.setLocationRelativeTo(null);
+        jf.setSize(500, 200);
+        //jf.setLocation(100, 50);
+        jf.setLocationRelativeTo(null);
         jf.setVisible(true);
         jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
     }
