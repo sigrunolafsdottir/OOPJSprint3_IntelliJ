@@ -1,7 +1,6 @@
 package Övn1_Bildvisare;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -21,6 +20,7 @@ public class BildvisareB extends JFrame implements ActionListener {
     public BildvisareB() {
         changeImageButton = new JButton("Byt bild");
         imageViewer = new JLabel(new ImageIcon(imagePath3));
+        imageViewer.setPreferredSize(new Dimension(300, 300));
         panel = new JPanel();
         panel.setLayout(new FlowLayout());
         panel.setBackground(Color.BLACK);
@@ -28,7 +28,8 @@ public class BildvisareB extends JFrame implements ActionListener {
         panel.add(changeImageButton);
         this.add(panel);
         changeImageButton.addActionListener(this);
-        setSize(800,600);   
+        //setSize(800,600);
+        pack();
         setVisible(true); 
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
     }

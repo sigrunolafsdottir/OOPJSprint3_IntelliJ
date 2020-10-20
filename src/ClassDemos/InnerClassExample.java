@@ -14,7 +14,7 @@ class InnerClassExample extends JFrame {
 
     class MyListener implements ActionListener{
         @Override
-	public void actionPerformed(ActionEvent e) {
+	    public void actionPerformed(ActionEvent e) {
             comp.setText("tryckt");
         }
     }

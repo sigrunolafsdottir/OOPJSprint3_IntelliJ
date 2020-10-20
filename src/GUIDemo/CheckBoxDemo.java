@@ -30,8 +30,14 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
    public void actionPerformed(ActionEvent e) { 
        
      if (e.getSource() == red){
-         red.setBackground(Color.red);
-         displayArea.setText("Du valde rött");
+         if (red.isSelected()) {
+             red.setBackground(Color.red);
+             displayArea.setText("Du valde rött");
+         }
+         else{
+             red.setBackground(Color.gray);
+             displayArea.setText("Du klickade bort rött");
+         }
      }
      else if (e.getSource() == blue){
          blue.setBackground(Color.blue);
@@ -41,6 +47,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
          yellow.setBackground(Color.yellow);
          displayArea.setText("Du valde gult");
      }
+
     } 
 
  

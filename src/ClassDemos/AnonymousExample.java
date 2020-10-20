@@ -16,6 +16,7 @@ class AnonymousExample extends JFrame  {
     JButton comp = new JButton("knapp");
     
     AnonymousExample() {
+
         ActionListener l = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -23,13 +24,13 @@ class AnonymousExample extends JFrame  {
             }
         };
         
-        WindowListener  w = new WindowAdapter(){
+      /*  WindowListener  w = new WindowAdapter(){
             @Override
             public void windowClosed(WindowEvent we) {
                 //spara ner till fil
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
-        };
+        };*/
         
         comp.addActionListener(l);
         JPanel p = new JPanel();

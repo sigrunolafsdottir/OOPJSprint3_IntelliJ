@@ -30,7 +30,7 @@ public class BildvisareC extends JFrame implements ActionListener {
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(imageDir)) {
             for (Path file: stream) {
                 imageFileNames.add(file.toString());
-                System.out.println(file.getFileName().toString());
+                System.out.println(file.toString());
             }
         } catch (IOException | DirectoryIteratorException x) {
             x.printStackTrace();

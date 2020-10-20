@@ -11,7 +11,9 @@ public class LambdaExample extends JFrame {
     JButton comp = new JButton("knapp");
     
     LambdaExample() {
-        comp.addActionListener(l -> { comp.setText("tryckt"); });
+
+        comp.addActionListener(l -> { if (true) comp.setText("tryckt");
+                                        else comp.setText("hej"); });
         JPanel p = new JPanel();
         p.setLayout(new FlowLayout());
         this.add(p);

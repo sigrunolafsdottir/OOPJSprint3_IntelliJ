@@ -17,12 +17,13 @@ class LocalClassExample extends JFrame {
     JButton comp = new JButton("knapp");
 
     LocalClassExample() {
-	class MyListener implements ActionListener{
+	    class MyListener implements ActionListener{
                 @Override
-		public void actionPerformed(ActionEvent e) {
+		    public void actionPerformed(ActionEvent e) {
                     comp.setText("tryckt");
                 }
-	}
+	    }
+	    /*
         class MWListener implements MouseListener{
 
             @Override
@@ -41,11 +42,11 @@ class LocalClassExample extends JFrame {
             @Override
             public void mouseExited(MouseEvent me) {
             }
-	}
+	}*/
         MyListener l = new MyListener();
-        MWListener l2 = new MWListener();
+      //  MWListener l2 = new MWListener();
         comp.addActionListener(l);
-        comp.addMouseListener(l2);
+     //   comp.addMouseListener(l2);
         JPanel p = new JPanel();
         p.setLayout(new FlowLayout());
         this.add(p);
