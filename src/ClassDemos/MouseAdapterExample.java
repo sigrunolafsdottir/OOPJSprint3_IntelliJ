@@ -12,7 +12,7 @@ class MouseAdapterExample extends JFrame {
 
 	    MouseAdapter ma = new MouseAdapter(){
             public void mouseClicked(MouseEvent me) {
-                comp.setText("klick klick");
+                comp.setText("klick master");
             }
         };
 
