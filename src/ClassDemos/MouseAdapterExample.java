@@ -7,17 +7,22 @@ import java.awt.event.*;
 
 class MouseAdapterExample extends JFrame {
     JButton comp = new JButton("knapp");
+    JButton b2 = new JButton("en till knapp i testbranchen");
+
 
     MouseAdapterExample() {
 
-	    MouseAdapter ma = new MouseAdapter(){
+
+	    MouseListener ma = new MouseAdapter(){
             public void mouseClicked(MouseEvent me) {
                 comp.setText("klick master");
             }
         };
 
-        comp.addMouseListener(ma);
+
+        //comp.addMouseListener(ma);
         JPanel p = new JPanel();
+        p.addMouseListener(ma);
         p.setLayout(new FlowLayout());
         this.add(p);
         p.add(comp);
