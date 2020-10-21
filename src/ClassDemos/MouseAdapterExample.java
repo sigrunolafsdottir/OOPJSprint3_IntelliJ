@@ -10,6 +10,8 @@ class MouseAdapterExample extends JFrame {
     JButton b2 = new JButton("en till knapp i testbranchen");
     JLabel label = new JLabel("conflict");
     JButton b3 = new JButton("konflikt i master");
+	
+	//added comment in GitHub
 
 
     MouseAdapterExample() {
