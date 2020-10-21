@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 class MouseAdapterExample extends JFrame {
     JButton comp = new JButton("knapp");
-    JButton b2 = new JButton("en till knapp");
+    JButton b2 = new JButton("en till knapp i testbranchen");
 
 
     MouseAdapterExample() {
