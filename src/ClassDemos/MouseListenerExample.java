@@ -10,6 +10,7 @@ import java.awt.event.MouseListener;
 
 class MouseListenerExample extends JFrame {
     JButton comp = new JButton("knapp");
+    JLabel label = new JLabel("hej");
 
     MouseListenerExample() {
 
@@ -26,7 +27,7 @@ class MouseListenerExample extends JFrame {
             public void mouseReleased(MouseEvent me) {
             }
             @Override
-            public void mouseEntered(MouseEvent me) {
+            public void mouseEntered(MouseEvent me) { label.setText("godis");
             }
             @Override
             public void mouseExited(MouseEvent me) {
@@ -35,11 +36,12 @@ class MouseListenerExample extends JFrame {
 
         MWListener l2 = new MWListener();
         comp.addMouseListener(l2);
-
+        label.addMouseListener(l2);
         JPanel p = new JPanel();
         p.setLayout(new FlowLayout());
         this.add(p);
         p.add(comp);
+        p.add(label);
         this.pack();
         this.setLocation(1000, 500);
         this.setVisible(true);
