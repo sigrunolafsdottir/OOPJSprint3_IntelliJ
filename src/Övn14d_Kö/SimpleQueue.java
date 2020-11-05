@@ -12,9 +12,12 @@ import java.util.*;
    public synchronized void put(QueueElement obj) {
        System.out.println("Putting "+ obj.getText());
      int p = Thread.currentThread().getPriority();
+     //alternativt sätt att ta fram prioriteten:
+     //int p = obj.getPri()
      int i;
      
      //leta baklänges i kön tills rätt prio hittas
+       // i kommer att tilldelas värdet på den plats före där vi vill lägga in vårt obj
      for (i=size()-1; i>=0 && p > ((QueueElement) l.get(i)).pri; i--)
        ;     
         l.add(i+1, obj);
