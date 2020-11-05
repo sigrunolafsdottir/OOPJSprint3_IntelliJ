@@ -15,7 +15,7 @@ public class MainClass {
             System.out.println("Producer no "+ (i+1) + ":");
             System.out.println(" Interval:");
             int time = sc.nextInt();
-            System.out.println(" Prio:");
+            System.out.println(" Prio (must be a number between 1 and 10):");
             int pri = sc.nextInt();
             System.out.println("Text? ");
             String txt = sc.next();

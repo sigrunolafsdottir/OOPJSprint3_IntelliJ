@@ -3,7 +3,7 @@ package Övn14d_Kö;
 import java.util.*;
 
  public class SimpleQueue {
-   private List<QueueElement> l = new Vector<QueueElement>(); 
+   private List<QueueElement> l = new ArrayList<QueueElement>();
 
    public int size() {  // ger antalet element i kön
      return l.size();

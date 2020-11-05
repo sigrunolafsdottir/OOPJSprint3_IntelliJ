@@ -37,7 +37,7 @@ public static void  main(String[] args)
       Thread t2 = new SampleThread(3);
       t2.start();
       System.out.println("Invoking join, waiting.........");
-      t2.join();
+      t2.join(10);
       System.out.println("Returned from join, yay!");
       System.out.println("is t2 alive " + t2.isAlive());
   }

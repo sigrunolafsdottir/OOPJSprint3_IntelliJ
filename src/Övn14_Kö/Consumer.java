@@ -14,8 +14,8 @@ public class Consumer implements Runnable{
         while(!Thread.interrupted()){
             try{
                 Thread.sleep(interval);
-                QueueElement e = (QueueElement)q.take();
-                System.out.println("Taking "+e.getText());
+                String e = q.take();
+                System.out.println("Taking "+e);
             }
             catch (InterruptedException e){
                 break;

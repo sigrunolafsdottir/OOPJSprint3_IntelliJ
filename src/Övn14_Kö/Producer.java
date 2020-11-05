@@ -5,21 +5,21 @@ package Övn14_Kö;
 public class Producer implements Runnable{
     
     public Thread aktivitet = new Thread(this);
-    private QueueElement obj;
+    private String text;
     private long interval;
     private SimpleQueue q;
     
     public Producer (String txt, long sec, SimpleQueue k){
         interval = sec * 1000;
         q = k;
-        obj = new QueueElement(txt);
+        text = txt;
     }
     
     public void run(){
         while(!Thread.interrupted()){
             try{
                 Thread.sleep(interval);
-                q.put(obj);
+                q.put(text);
             }
             catch (InterruptedException e){
                 break;

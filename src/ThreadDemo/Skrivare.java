@@ -17,6 +17,7 @@ public class Skrivare extends Thread{
                 System.out.println(text);
             }
             catch (InterruptedException e){
+                System.out.println("interrupted exception slängdes");
                 break;
             }
         }
