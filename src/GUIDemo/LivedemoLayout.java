@@ -57,6 +57,7 @@ import java.awt.*;
 
         public static void main(String[] args) {
             GUIDemo.LivedemoLayout g = new GUIDemo.LivedemoLayout();
+
         }
 
     }
