@@ -85,12 +85,13 @@ public class Bilhyra extends JFrame implements ActionListener{
                 double enteredMätarställningNu = scMätarställningNu.nextDouble();
                 double enteredMätarställningGammal = scMätarställningGammal.nextDouble();
                 double enteredFörbrukadBensin = scFörbrukadBensin.nextDouble();
+                double kördamil = antalKördaMil(enteredMätarställningNu,enteredMätarställningGammal);
                 antalKördaMil.setText(String.format("Antal körda mil: %8.0f \n" , 
                         antalKördaMil(enteredMätarställningNu,enteredMätarställningGammal)));
                 antalLiterBensinLabel.setText(String.format("Antal liter bensin: %7.1f \n", 
                         enteredFörbrukadBensin));
                 förbrukningPerMilLabel.setText(String.format("Förbrukning per mil: %1.2f \n", 
-                        forbrukningPerMil(enteredMätarställningNu,enteredMätarställningGammal)));
+                        forbrukningPerMil(enteredFörbrukadBensin,kördamil)));
             }
         }
     }
