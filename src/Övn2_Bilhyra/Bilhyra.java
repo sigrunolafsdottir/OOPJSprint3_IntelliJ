@@ -34,9 +34,9 @@ public class Bilhyra extends JFrame implements ActionListener{
     public Bilhyra () {
         //lägger ut delpanelerna
         setLayout(new BorderLayout());
-        add("West", questions);      
-        add("East", answers);   
-        add("South", finalVerdictPanel); 
+        add(questions, BorderLayout.WEST);
+        add(answers, BorderLayout.EAST);
+        add(finalVerdictPanel, BorderLayout.SOUTH);
         
         //placerar ut komponenter
         questions.setLayout(new GridLayout(3,1));
@@ -80,14 +80,17 @@ public class Bilhyra extends JFrame implements ActionListener{
             Scanner scMätarställningNu = new Scanner(mätarställningNu.getText());
             Scanner scMätarställningGammal = new Scanner(mätarställningGammal.getText());
             Scanner scFörbrukadBensin = new Scanner(förbrukadBensin.getText());
+
             if (scMätarställningNu.hasNextDouble() && scMätarställningGammal.hasNextDouble() 
                     && scFörbrukadBensin.hasNextDouble()){
                 double enteredMätarställningNu = scMätarställningNu.nextDouble();
                 double enteredMätarställningGammal = scMätarställningGammal.nextDouble();
                 double enteredFörbrukadBensin = scFörbrukadBensin.nextDouble();
+
                 double kördamil = antalKördaMil(enteredMätarställningNu,enteredMätarställningGammal);
-                antalKördaMil.setText(String.format("Antal körda mil: %8.0f \n" , 
-                        antalKördaMil(enteredMätarställningNu,enteredMätarställningGammal)));
+
+                antalKördaMil.setText(String.format("Antal körda mil: %8.0f \n" ,
+                        kördamil));
                 antalLiterBensinLabel.setText(String.format("Antal liter bensin: %7.1f \n", 
                         enteredFörbrukadBensin));
                 förbrukningPerMilLabel.setText(String.format("Förbrukning per mil: %1.2f \n", 
