@@ -1,6 +1,6 @@
 package Övn3_PengarTillbaka;
 
- // Filen Vaxel.java
+
  import java.awt.*;
  import java.awt.event.*;
  import javax.swing.*;
@@ -99,39 +99,39 @@ package Övn3_PengarTillbaka;
        if (ch1000.isSelected()){
         resultat1000.setText(tillbaka/1000 + " tusenlappar");
         tillbaka = tillbaka % 1000;
-       }
+       } else resultat1000.setText(0+ " tusenlappar");
        if (ch500.isSelected()){
         resultat500.setText(tillbaka/500 + " femhundralappar");
         tillbaka = tillbaka % 500;  
-       }
+       } else resultat500.setText(0+ " femhundralappar");
        if (ch200.isSelected()){
         resultat200.setText(tillbaka/200 + " tvåhundralappar");
         tillbaka = tillbaka % 200;
-       }
+       } else resultat200.setText(0+ " tvåhundralappar");
        if (ch100.isSelected()){
         resultat100.setText(tillbaka/100 + " hundralappar");
         tillbaka = tillbaka % 100;
-       }
+       } else resultat100.setText(0+ " hundralappar");
        if (ch50.isSelected()){
         resultat50.setText(tillbaka/50 + " femtiolappar");
         tillbaka = tillbaka % 50;
-       }
+       } else resultat50.setText(0+ " femtiolappar");
        if (ch20.isSelected()){
         resultat20.setText(tillbaka/20 + " tjugor");
         tillbaka = tillbaka % 20;
-       }
+       } else resultat20.setText(0+ " tjugor");
        if (ch10.isSelected()){
         resultat10.setText(tillbaka/10 + " tior");
         tillbaka = tillbaka % 10;
-       }
+       } else resultat10.setText(0+ " tior");
        if (ch5.isSelected()){
         resultat5.setText(tillbaka/5 + " femmor");
         tillbaka = tillbaka % 5;
-       }
+       } else resultat5.setText(0+ " femmor");
        if (ch2.isSelected()){
        resultat2.setText(tillbaka/2 + " tvåkronor");
        tillbaka = tillbaka % 2;
-       }
+       } else resultat2.setText(0+ " tvåkronor");
        resultat1.setText(tillbaka + " enkronor");
     }
   }

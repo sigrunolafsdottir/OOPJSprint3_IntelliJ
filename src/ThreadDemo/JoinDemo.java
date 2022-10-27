@@ -11,6 +11,7 @@ public class JoinDemo {
         t1.start();
         
         //start second thread after waiting for 2 seconds or if it's dead
+        //as t1 is not dead, timeout will occur
         try {
             t1.join(2000);
         } catch (InterruptedException e) {

@@ -1,20 +1,28 @@
 package GUIDemo;
 
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 
-public class JFrameDemo {
+public class JFrameDemo extends JFrame{
+
+    JPanel panel = new JPanel();
+    JButton button = new JButton("Knapp");
+    JLabel label = new JLabel("label");
     
-    JFrameDemo(){
-        //alternativt kan man låta denna klass extenda JFrameDemo
-        //Då behövs inget JFrame-objekt och istf. "jf." används "this."
-        JFrame jf = new JFrame();
-        jf.setTitle("En titel");
-        jf.setSize(500, 200);
-        //jf.setLocation(100, 50);
-        jf.setLocationRelativeTo(null);
-        jf.setVisible(true);
-        jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
+    JFrameDemo() {
+        //JFrame jf = new JFrame();
+        //jf.setTitle("En titel");
+        setSize(500, 200);
+        panel.setBackground(Color.BLUE);
+        add(panel);
+        panel.add(button);
+        panel.add(label);
+
+         //jf.setLocation(100, 50);
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
     
     public static void main(String[] args){

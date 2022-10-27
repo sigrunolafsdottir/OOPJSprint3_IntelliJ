@@ -19,16 +19,14 @@ public class RedButton extends JFrame {
     setDefaultCloseOperation(EXIT_ON_CLOSE);
   }
 
-  MouseAdapter musLyss = new MouseAdapter() {
+  MouseListener musLyss = new MouseAdapter() {
     @Override
     public void mouseEntered(MouseEvent e) {
-      if (e.getComponent() == b) 
         b.setBackground(Color.red);
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-      if (e.getComponent() == b) 
         b.setBackground(Color.lightGray);
     }
   };

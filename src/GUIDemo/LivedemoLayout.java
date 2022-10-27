@@ -3,10 +3,12 @@ package GUIDemo;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 //LIve demo coding
 
-    public class LivedemoLayout extends JFrame {
+    public class LivedemoLayout extends JFrame implements ActionListener {
 
         JPanel rootPanel = new JPanel();
         JPanel toppanel = new JPanel();
@@ -22,6 +24,9 @@ import java.awt.*;
 
         LivedemoLayout() {
             setSize(500, 500);
+
+            button1.addActionListener(this);
+            button2.addActionListener(this);
 
             label1.setBackground(Color.BLUE);
             label2.setBackground(Color.RED);
@@ -61,5 +66,21 @@ import java.awt.*;
 
         }
 
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource() == button1){
+                label1.setText("knapp 1 intryckt");
+                String test = label1.getText();
+                System.out.println(test);
+            }
+            else if (e.getSource() == button2){
+                String test = label2.getText();
+                System.out.println(test);
+                label2.setText("knapp 2 intryckt");
+                test = label2.getText();
+                System.out.println(test);
+            }
+
+        }
     }
 

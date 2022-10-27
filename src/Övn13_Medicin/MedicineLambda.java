@@ -10,7 +10,7 @@ public class MedicineLambda {
   public static void main(String[] arg) 
           throws InterruptedException {
     Scanner sc;
-    double ggr = 0;
+    double ggr = 0.0;
     boolean go = true;
     while (go) { 
       String medicin = JOptionPane.showInputDialog(null, 
@@ -33,8 +33,19 @@ public class MedicineLambda {
           break;
       }
 
-      Medicin m = new Medicin(medicin, ggr);
-      Thread t = new Thread(m);
+      Double finalGgr = ggr;
+      Runnable runnable = () -> {
+        while (!Thread.interrupted()) {
+          try {
+            Thread.sleep(Math.round((60/ finalGgr) * 1000));
+            System.out.println("Dags att ta " + medicin);
+          } catch (InterruptedException e) {
+            break;
+          }
+        }
+      };
+
+      Thread t = new Thread(runnable);
       t.start();
     }
     System.exit(0);    

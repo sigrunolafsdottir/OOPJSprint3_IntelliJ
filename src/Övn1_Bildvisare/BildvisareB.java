@@ -13,8 +13,8 @@ public class BildvisareB extends JFrame implements ActionListener {
     JButton changeImageButton;
     JLabel imageViewer;
     JPanel panel;
-    final String imagePath0 = "src\\övningsuppgift1\\images\\bild0.jpg";
-    final String imagePath3 = "src\\övningsuppgift1\\images\\bild3.jpg";
+    final String imagePath0 = "src\\Övn1_Bildvisare\\images\\bild0.jpg";
+    final String imagePath3 = "src\\Övn1_Bildvisare\\images\\bild3.jpg";
     int toggler = 0;
     
     public BildvisareB() {

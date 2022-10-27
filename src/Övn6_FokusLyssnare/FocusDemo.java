@@ -12,10 +12,10 @@ public class FocusDemo extends JFrame {
   public FocusDemo() {
     setLayout(new BorderLayout());
     add(första, BorderLayout.CENTER);
-    add(överst, BorderLayout.NORTH); add(nederst, BorderLayout.SOUTH); 
+    add(överst, BorderLayout.NORTH);
+    add(nederst, BorderLayout.SOUTH);
     addWindowListener(fönsterLyss);
     första.addFocusListener(focusLyss);
-    //setSize(200,100);
     setSize(500,500);
     setVisible(true);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -31,13 +31,11 @@ public class FocusDemo extends JFrame {
   FocusListener focusLyss = new FocusListener() {
     @Override
     public void focusGained(FocusEvent e) {
-      if (e.getComponent() == första) 
         första.setBackground(Color.blue);
     }
 
     @Override
     public void focusLost(FocusEvent e) {
-      if (e.getComponent() == första) 
         första.setBackground(Color.white);
     }
   };

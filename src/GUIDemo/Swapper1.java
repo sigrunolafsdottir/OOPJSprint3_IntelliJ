@@ -17,6 +17,8 @@ public class Swapper1 extends JFrame implements ActionListener {
     public Swapper1(){
 
         swapper.addActionListener(this);
+        //button1.addActionListener(this);
+        //button2.addActionListener(this);
         add(panel);
         panel.add(button1);
         panel.add(button2);
@@ -36,19 +38,20 @@ public class Swapper1 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (panel.getComponent(0) == button1 ){
-            panel.removeAll();
-            panel.add(button2, 0);
-            panel.add(button1, 1);
-            panel.add(swapper, 2);
-            panel.revalidate();
-        }
-        else if (panel.getComponent(0) == button2 ){
-            panel.removeAll();
-            panel.add(button1, 0);
-            panel.add(button2, 1);
-            panel.add(swapper, 2);
-            panel.revalidate();
-        }
+
+            if (panel.getComponent(0) == button1) {
+                panel.removeAll();
+                panel.add(button2, 0);
+                panel.add(button1, 1);
+                panel.add(swapper, 2);
+                panel.revalidate();
+            } else if (panel.getComponent(0) == button2) {
+                panel.removeAll();
+                panel.add(button1, 0);
+                panel.add(button2, 1);
+                panel.add(swapper, 2);
+                panel.revalidate();
+            }
+
     }
 }

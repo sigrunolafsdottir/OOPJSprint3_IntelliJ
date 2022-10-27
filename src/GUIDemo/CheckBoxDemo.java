@@ -36,7 +36,11 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
          }
          else{
              red.setBackground(Color.gray);
-             displayArea.setText("Du klickade bort rött");
+             displayArea.setText("Du klickade bort rött bla blab blab lba");
+             p.remove(displayArea);
+             p.add(displayArea);
+
+             pack();
          }
      }
      else if (e.getSource() == blue){

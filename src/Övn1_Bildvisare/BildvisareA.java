@@ -12,7 +12,7 @@ public class BildvisareA extends JFrame {
     JButton changeImageButton;
     JLabel imageViewer;
     JPanel panel;
-    final String imagePath = "src\\övningsuppgift1\\images\\bild3.jpg";
+    final String imagePath = "src\\Övn1_Bildvisare\\images\\bild3.jpg";
     
     public BildvisareA() {
         changeImageButton = new JButton("Byt bild");

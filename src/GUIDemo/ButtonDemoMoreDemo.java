@@ -1,22 +1,18 @@
 package GUIDemo;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
-public class ButtonDemo extends JFrame implements ActionListener{
-    
+public class ButtonDemoMoreDemo extends JFrame implements ActionListener{
+
     JLabel label = new JLabel("Hej");
     JButton button = new JButton("Tryck här");
     JButton button2 = new JButton("Eller här");
 
 
-    
-    ButtonDemo(){
+    ButtonDemoMoreDemo(){
         JPanel p = new JPanel();
         p.setLayout(new FlowLayout());
         button.addActionListener(this);
@@ -47,7 +43,7 @@ public class ButtonDemo extends JFrame implements ActionListener{
     }
     
     public static void main(String[] args){
-        ButtonDemo g = new ButtonDemo();
+        ButtonDemoMoreDemo g = new ButtonDemoMoreDemo();
     }
     
     

@@ -17,8 +17,7 @@ public class ThreadDemo {
      //   s2.run();
      //   s3.run();
         
-        Thread.sleep(10000);
-        //s1.sleep(5);
+     //   Thread.sleep(10000);
         
         s1.interrupt();
         s2.interrupt();

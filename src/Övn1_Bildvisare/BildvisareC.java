@@ -19,18 +19,18 @@ public class BildvisareC extends JFrame implements ActionListener {
     JButton changeImageButton;
     JLabel imageViewer;
     JPanel panel = new JPanel();
-    final String imagePath = "src\\övningsuppgift1\\images\\";
+    final String imagePath = "src\\Övn1_Bildvisare\\images\\";
     Path imageFolder = Paths.get(imagePath);
     int imageIndex = 0;
     int imageCount= 0;
     List <String> imageFileNames = new ArrayList<>();
 
     //Creates a list of all files in a given directory
-    protected List <String> loadImageNames(Path imageDir){
+    public static List <String> loadImageNames(Path imageDir, List<String> imageFileNames){
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(imageDir)) {
             for (Path file: stream) {
                 imageFileNames.add(file.toString());
-                System.out.println(file.toString());
+                //System.out.println(file.toString());
             }
         } catch (IOException | DirectoryIteratorException x) {
             x.printStackTrace();
@@ -38,8 +38,12 @@ public class BildvisareC extends JFrame implements ActionListener {
         return imageFileNames;
     }
 
+    public static int getNextIndex(int imageIndex, int imageCount){
+        return (imageIndex + 1) % imageCount;
+    }
+
     public BildvisareC() {
-        imageFileNames = loadImageNames(imageFolder);
+        imageFileNames = loadImageNames(imageFolder, imageFileNames);
         imageCount = imageFileNames.size();
         changeImageButton = new JButton("Byt bild");
         imageViewer = new JLabel(new ImageIcon(imageFileNames.get(imageIndex)));
@@ -53,6 +57,7 @@ public class BildvisareC extends JFrame implements ActionListener {
         setVisible(true); 
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
     }
+
     
     public static void main(String args[]){
         BildvisareC bildvisare = new BildvisareC();
@@ -60,7 +65,7 @@ public class BildvisareC extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        imageIndex = (imageIndex + 1) % imageCount;
+        imageIndex = getNextIndex(imageIndex, imageCount);
         imageViewer.setIcon(new ImageIcon( imageFileNames.get(imageIndex)));
     }
 }

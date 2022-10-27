@@ -7,26 +7,20 @@ import java.awt.event.*;
 
 class MouseAdapterExample extends JFrame {
     JButton comp = new JButton("knapp");
-    JButton b2 = new JButton("en till knapp i testbranchen");
-    JLabel label = new JLabel("conflict");
-    JButton b3 = new JButton("konflikt i master");
-	
-	//added comment in GitHub
 
+	//added comment in GitHub
 
     MouseAdapterExample() {
 
-
 	    MouseListener ma = new MouseAdapter(){
             public void mouseClicked(MouseEvent me) {
-                comp.setText("klick master again");
+                comp.setText("klicked");
             }
         };
 
-
         //comp.addMouseListener(ma);
         JPanel p = new JPanel();
-        p.addMouseListener(ma);
+        comp.addMouseListener(ma);
         p.setLayout(new FlowLayout());
         this.add(p);
         p.add(comp);
