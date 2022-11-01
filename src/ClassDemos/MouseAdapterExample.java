@@ -24,6 +24,7 @@ class MouseAdapterExample extends JFrame {
         p.setLayout(new FlowLayout());
         this.add(p);
         p.add(comp);
+
         this.pack();
         this.setLocation(1000, 500);
         this.setVisible(true);

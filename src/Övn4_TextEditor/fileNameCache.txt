@@ -1,4 +1,3 @@
-
 src/Övn4_TextEditor/text.txt
 src/Övn4_TextEditor/fileNameCache.txt
 src/Övn4_TextEditor/totaleclipse.txt
