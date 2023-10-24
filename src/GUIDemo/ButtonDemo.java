@@ -14,6 +14,7 @@ public class ButtonDemo extends JFrame implements ActionListener{
     JButton button = new JButton("Tryck här");
     JButton button2 = new JButton("Eller här");
 
+    JButton button3 = new JButton("Ny knapp");
 
     
     ButtonDemo(){
@@ -41,6 +42,7 @@ public class ButtonDemo extends JFrame implements ActionListener{
             }
         }
         else if(e.getSource() == button2){
+            label.setOpaque(true);
             label.setForeground(Color.CYAN);
         }
 

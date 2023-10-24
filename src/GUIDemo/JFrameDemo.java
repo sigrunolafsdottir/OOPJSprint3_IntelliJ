@@ -3,21 +3,17 @@ package GUIDemo;
 import javax.swing.*;
 import java.awt.*;
 
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-public class JFrameDemo extends JFrame{
 
-    JPanel panel = new JPanel();
-    JButton button = new JButton("Knapp");
-    JLabel label = new JLabel("label");
+public class JFrameDemo  extends JFrame{
+
     
     JFrameDemo() {
-        //JFrame jf = new JFrame();
+        //super();
+       // JFrame jf = new JFrame();
         //jf.setTitle("En titel");
         setSize(500, 200);
-        panel.setBackground(Color.BLUE);
-        add(panel);
-        panel.add(button);
-        panel.add(label);
 
          //jf.setLocation(100, 50);
         setLocationRelativeTo(null);

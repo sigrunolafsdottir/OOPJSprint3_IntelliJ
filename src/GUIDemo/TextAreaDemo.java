@@ -4,6 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
@@ -35,7 +40,21 @@ public class TextAreaDemo extends JFrame implements ActionListener  {
      setDefaultCloseOperation(EXIT_ON_CLOSE);  
    } 
     
-    public void actionPerformed(ActionEvent e) { 
+    public void actionPerformed(ActionEvent e) {
+        List<String> test = new ArrayList<>();
+        Scanner sc = new Scanner(area.getText());
+
+        while (sc.hasNextLine()){
+            test.add(sc.nextLine());
+        }
+        System.out.println(test);
+
+        try {
+            area.read(new FileReader("src/GUIDemo/data.txt"), true);
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+
         if (e.getSource() == clearButton){
             area.setText("");
         }
