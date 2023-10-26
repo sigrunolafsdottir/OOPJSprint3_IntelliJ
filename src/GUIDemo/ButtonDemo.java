@@ -14,7 +14,7 @@ public class ButtonDemo extends JFrame implements ActionListener{
     JButton button = new JButton("Tryck här");
     JButton button2 = new JButton("Eller här");
 
-    JButton button3 = new JButton("GitDemoKnapp");
+    JButton button3 = new JButton("GitDemoKnapp testbranch2");
 
     
     ButtonDemo(){
