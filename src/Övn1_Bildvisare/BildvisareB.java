@@ -20,7 +20,7 @@ public class BildvisareB extends JFrame implements ActionListener {
     public BildvisareB() {
         changeImageButton = new JButton("Byt bild");
         imageViewer = new JLabel(new ImageIcon(imagePath3));
-        imageViewer.setPreferredSize(new Dimension(300, 300));
+        imageViewer.setPreferredSize(new Dimension(800, 600));
         panel = new JPanel();
         panel.setLayout(new FlowLayout());
         panel.setBackground(Color.BLACK);

@@ -9,9 +9,9 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 //Visar en bild
 public class BildvisareA extends JFrame {
     
-    JButton changeImageButton;
-    JLabel imageViewer;
-    JPanel panel;
+    private JButton changeImageButton;
+    private JLabel imageViewer;
+    protected JPanel panel;
     final String imagePath = "src\\Övn1_Bildvisare\\images\\bild3.jpg";
     
     public BildvisareA() {

@@ -27,7 +27,7 @@ public class RedButton extends JFrame {
 
     @Override
     public void mouseExited(MouseEvent e) {
-        b.setBackground(Color.lightGray);
+        b.setBackground(UIManager.getColor("Button.background"));
     }
   };
 

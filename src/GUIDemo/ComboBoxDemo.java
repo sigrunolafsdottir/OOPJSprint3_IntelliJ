@@ -10,7 +10,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
    
    private JPanel p = new JPanel(); 
    private JComboBox colorchooser; 
-   private JLabel l = new JLabel(" "); 
+   private JLabel l = new JLabel("  ");
    private final String colors[] = { "röd", "blå", "gul" };
 
    public ComboBoxDemo() { 

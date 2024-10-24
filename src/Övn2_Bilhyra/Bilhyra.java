@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 
 public class Bilhyra extends JFrame implements ActionListener{
     
-    Scanner sc = new Scanner(System.in);
+   // Scanner sc = new Scanner(System.in);
     JLabel mätarställningNuLabel = new JLabel("Ange mätarställning nu: ");
     JLabel mätarställningGammalLabel = new JLabel("Ange mätarställning för ett år sedan: ");
     JLabel förbrukadBensinLabel = new JLabel("Ange antal liter förbrukad bensin: ");
@@ -31,7 +31,7 @@ public class Bilhyra extends JFrame implements ActionListener{
     
    
     
-    public Bilhyra () {
+    public void GenerateApp () {
         //lägger ut delpanelerna
         setLayout(new BorderLayout());
         add(questions, BorderLayout.WEST);
@@ -73,8 +73,6 @@ public class Bilhyra extends JFrame implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if (ae.getSource() == mätarställningNu || ae.getSource() == mätarställningGammal 
-                || ae.getSource() == förbrukadBensin) {
             
             //Using scanner for easy Double parsing
             Scanner scMätarställningNu = new Scanner(mätarställningNu.getText());
@@ -96,10 +94,11 @@ public class Bilhyra extends JFrame implements ActionListener{
                 förbrukningPerMilLabel.setText(String.format("Förbrukning per mil: %1.2f \n", 
                         forbrukningPerMil(enteredFörbrukadBensin,kördamil)));
             }
-        }
+
     }
     
     public static void main(String[] args) {
         Bilhyra ö = new Bilhyra();
+        ö.GenerateApp();
     }
 }

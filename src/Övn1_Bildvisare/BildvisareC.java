@@ -38,9 +38,7 @@ public class BildvisareC extends JFrame implements ActionListener {
         return imageFileNames;
     }
 
-    public static int getNextIndex(int imageIndex, int imageCount){
-        return (imageIndex + 1) % imageCount;
-    }
+
 
     public BildvisareC() {
         imageFileNames = loadImageNames(imageFolder, imageFileNames);
@@ -63,6 +61,12 @@ public class BildvisareC extends JFrame implements ActionListener {
         BildvisareC bildvisare = new BildvisareC();
     }
 
+    public static int getNextIndex(int imageIndex, int imageCount){
+        // x / y
+        // x % y
+
+        return (imageIndex + 1) % imageCount;   //modulus-operatorn
+    }
     @Override
     public void actionPerformed(ActionEvent ae) {
         imageIndex = getNextIndex(imageIndex, imageCount);

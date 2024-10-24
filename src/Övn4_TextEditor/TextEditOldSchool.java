@@ -6,8 +6,7 @@ import java.awt.*;
  import javax.swing.*; 
 
 
- public class TextEditOldSchool extends JFrame 
-         implements ActionListener { 
+ public class TextEditOldSchool extends JFrame implements ActionListener {
    private JPanel p = new JPanel(); 
    private JTextField namn  = new JTextField(); 
    private JButton    öppna = new JButton("Öppna"); 

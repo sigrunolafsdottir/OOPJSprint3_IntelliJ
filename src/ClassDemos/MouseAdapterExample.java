@@ -13,8 +13,12 @@ class MouseAdapterExample extends JFrame {
     MouseAdapterExample() {
 
 	    MouseListener ma = new MouseAdapter(){
+            @Override
             public void mouseClicked(MouseEvent me) {
                 comp.setText("klicked");
+            }
+            @Override
+            public void mouseEntered(MouseEvent me) { comp.setText("godis");
             }
         };
 

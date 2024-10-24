@@ -1,31 +1,28 @@
-package Övn14d_Kö;
+package Övn10_Köabc;
 
+//exempel från boken
 
-public class Producer implements Runnable{
-    
+public class Consumer implements Runnable{
     public Thread aktivitet = new Thread(this);
-    private QueueElement obj;
     private long interval;
     private SimpleQueue q;
-    private int prio;
     
-    public Producer (String txt, long sec, int prio, SimpleQueue k){
+    public Consumer (long sec, SimpleQueue k){
         interval = sec * 1000;
         q = k;
-        this.prio = prio;
-        obj = new QueueElement(txt, prio);
     }
     
     public void run(){
-        aktivitet.setPriority(prio);
         while(!Thread.interrupted()){
             try{
                 Thread.sleep(interval);
-                q.put(obj);
+                String e = q.take();
+                System.out.println("Taking "+e);
             }
             catch (InterruptedException e){
                 break;
             }
         }
     }
+
 }

@@ -27,14 +27,14 @@ import javax.swing.*;
      p.add(skriv); 
      p.add(sluta); 
      
-     namn.addActionListener(l -> {läsInFil(namn.getText());});  
-     öppna.addActionListener(l -> {läsInFil(namn.getText());});  
-     spara.addActionListener(l -> {sparaFil(namn.getText());}); 
+     namn.addActionListener(l -> läsInFil(namn.getText()));
+     öppna.addActionListener(l -> läsInFil(namn.getText()));
+     spara.addActionListener(e -> sparaFil(namn.getText()));
      skriv.addActionListener(l -> {try {area.print();}
                                    catch (Exception ex) 
                                    {ex.printStackTrace();}
                                   });
-     sluta.addActionListener(l -> {System.exit(0);});
+     sluta.addActionListener(l -> System.exit(0));
      
      // placera ut panelen och textarean 
      add(p,  BorderLayout.NORTH); 

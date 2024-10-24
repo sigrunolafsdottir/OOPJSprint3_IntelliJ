@@ -15,8 +15,7 @@ public class LambdaExample extends JFrame {
 
     LambdaExample() {
 
-        comp.addActionListener(l -> { if (true) comp.setText("tryckt");
-                                        else comp.setText("hej"); });
+        comp.addActionListener(l -> comp.setText("hej"));
 
         comp2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){

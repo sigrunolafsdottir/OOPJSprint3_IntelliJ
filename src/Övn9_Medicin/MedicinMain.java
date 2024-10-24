@@ -1,4 +1,4 @@
-package Övn13_Medicin;
+package Övn9_Medicin;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;

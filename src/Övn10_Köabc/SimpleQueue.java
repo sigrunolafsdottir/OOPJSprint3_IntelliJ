@@ -1,4 +1,4 @@
-package Övn14_Köabc;
+package Övn10_Köabc;
 
 import java.util.*;
 

@@ -13,7 +13,6 @@ public class ThreadDemo {
         s2.start();
         s3.start();
 
-        
         //s1.run();
         //s2.run();
         //s3.run();

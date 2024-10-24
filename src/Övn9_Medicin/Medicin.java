@@ -1,4 +1,4 @@
-package Övn13_Medicin;
+package Övn9_Medicin;
 
 
 public class Medicin implements Runnable {

@@ -1,8 +1,7 @@
-package Övn14_Köabc;
+package Övn10d_Kö;
 
 import java.util.Scanner;
 
-//exempel från boken
 
 public class MainClass {
     
@@ -16,9 +15,11 @@ public class MainClass {
             System.out.println("Producer no "+ (i+1) + ":");
             System.out.println(" Interval:");
             int time = sc.nextInt();
+            System.out.println(" Prio (must be a number between 1 and 10, 10 is high):");
+            int pri = sc.nextInt();
             System.out.println("Text? ");
             String txt = sc.next();
-            p[i] = new Producer(txt, time, buf);
+            p[i] = new Producer(txt, time,pri, buf);
         }
         
         System.out.println("Amount of comsumers: ");
@@ -26,7 +27,9 @@ public class MainClass {
         for (int i = 0; i < c.length; i++){
             System.out.println(" Interval:");
             int time = sc.nextInt();
-            c[i] = new Consumer(time, buf);
+            System.out.println(" Prio (must be a number between 1 and 10, 10 i high):");
+            int pri = sc.nextInt();
+            c[i] = new Consumer(time, buf, pri);
         }
         
         for( int i = 0; i < p.length; i++){

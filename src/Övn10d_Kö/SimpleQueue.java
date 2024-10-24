@@ -1,4 +1,4 @@
-package Övn14d_Kö;
+package Övn10d_Kö;
 
 import java.util.*;
 
